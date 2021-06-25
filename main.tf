@@ -94,7 +94,7 @@ resource "aws_network_acl" "private" {
 }
 
 resource "aws_flow_log" "private_subnet_flow_log" {
-  count                = var.enable_flow_log ? 1 : 0
+  count                = var.enable_flow_log ? var.subnet_count : 0
   log_destination      = var.flow_log_s3_bucket_arn
   log_destination_type = "s3"
   traffic_type         = var.flow_log_traffic_type
