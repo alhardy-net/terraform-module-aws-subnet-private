@@ -26,6 +26,7 @@ variable "subnet_count" {
 variable "nat_gateway_ids" {
   description = "The nat gateway ids for each of the subnets providing internet access. allow_internet_access should be true"
   type        = list(string)
+  default     = []
 }
 
 variable "allow_internet_access" {
