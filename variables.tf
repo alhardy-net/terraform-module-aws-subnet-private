@@ -67,6 +67,12 @@ variable "subnet_network_acl_ingress" {
   ]
 }
 
+variable "availability_zones" {
+  type        = list(string)
+  default     = null
+  description = "The availability zones to use for the private subnets. If not specified random az will be assigned. The length will overrides the subnet_count."
+}
+
 # Terraform Cloud
 variable "TFC_WORKSPACE_SLUG" {
   type        = string
